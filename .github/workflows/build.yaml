@@ -42,6 +42,7 @@ jobs:
           version: 'v1.25.3'
       - name: Create Kubeconfig
         run: |
+          mkdir -p ~/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
       - name: Set Image
         run: |
