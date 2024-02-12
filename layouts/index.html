@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ $paginator := .Paginate $pages }}
+  {{ partial "post-list.html" $paginator }}
+{{ end }}
